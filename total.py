@@ -43,6 +43,17 @@ def close_register():
     print(pennies)
     total = total + pennies
 
+    checks_boolean = input("Checks? (Y / N)\n")
+    
+    if checks_boolean == "N" or "n":
+        print("No Checks")
+    if checks_boolean == "Y" or "y":
+        print("Adding Checks...")
+    else:
+        print("Improper input, exiting")
+        exit
+  
+
     return total
 
 print("\nTotal: " + str(close_register()))
