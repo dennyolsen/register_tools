@@ -43,18 +43,34 @@ def close_register():
     print(pennies)
     total = total + pennies
 
-    checks_boolean = input("Checks? (Y / N)\n")
-    
-    if checks_boolean == "N" or "n":
-        print("No Checks")
-    if checks_boolean == "Y" or "y":
-        print("Adding Checks...")
-    else:
-        print("Improper input, exiting")
-        exit
-  
-
     return total
 
-print("\nTotal: " + str(close_register()))
+def total_checks():
+    print("Totaling checks...")
+    checkscheck = input('Do you have checks? (y/n): ').lower().startswith('y')
+    checkstotal = Money(0.00, 'USD')
+    if checkscheck == True:
+        checksnumber = int(input("How many checks do you have? "))
+        # print(checksnumber)
+        for check in range(checksnumber):
+            print("Check Number " + str(check + 1) + " Total: ")
+            amount = Money(input(), 'USD')
+            checkstotal = checkstotal + amount
+        # checkstotal = Money(3.50, 'USD')
+    else:
+        checkstotal = Money(0.00, 'USD')
+
+    return checkstotal
+    
+
+register_count = close_register()
+
+checkstotal = total_checks()
+
+print("\nCash Count: " + str(register_count))
+print("\nChecks Count: " + str(checkstotal))
+
+daily_total = register_count + checkstotal
+
+print("\nDaily Register Total: " + str(daily_total))
 
