@@ -1,61 +1,49 @@
-# REGISTER CLOSER for Community Cycles Bike Shop
-# Author: Copyright (c) Dennis Olsen
-# License: MIT
+from moneyed import Money
 
-def get_total():
-    print("CLOSE REGISTER\n" \
-    # Twenties
-    "$20 Bills Count:")
-    twenties = int(input())
-    total = twenties * 20
-    print("Cash Total: $" + str (total) + "\n")
+def close_register():
+    total = Money(0.00, 'USD')
 
-    # Tens
-    print("$10 Bills Count:")
-    tens = int(input())
-    total = total + tens * 10
-    print("Cash Total: $" + str (total) + "\n")
+    hundreds = Money(int(input("How many $100 bills?\n")) * 100.00, 'USD')
+    print(hundreds)
+    total = total + hundreds
 
-    # Fives
-    print("$5 Bills Count:")
-    fives = int(input())
-    total = total + fives * 5
-    print("Cash Total: $" + str (total) + "\n")
+    fifties = Money(int(input("How many $50 bills?\n")) * 50.00, 'USD')
+    print(fifties)
+    total = total + fifties
 
-    # Ones
-    print("$1 Bills Count:")
-    ones = int(input())
+    twenties = Money(int(input("How many $20 bills?\n")) * 20.00, 'USD')
+    print(twenties)
+    total = total + twenties
+
+    tens = Money(int(input("How many $10 bills?\n")) * 10.00, 'USD')
+    print(tens)
+    total = total + tens
+
+    fives = Money(int(input("How many $5 bills?\n")) * 5.00, 'USD')
+    print(fives)
+    total = total + fives
+
+    ones = Money(int(input("How many $1 bills?\n")) * 1.00, 'USD')
+    print(ones)
     total = total + ones
-    print("Cash Total: $" + str (total) + "\n")
 
-    # Quarters
-    print("Quarters Count:")
-    quarters = int(input())
-    total = total + quarters * .25
-    print("Cash Total: $" + str (total) + "\n")
+    quarters = Money(int(input("How many quarters?\n")) * 0.25, 'USD')
+    print(quarters)
+    total = total + quarters
 
-    # Dimes
-    print("Dimes Count:")
-    dimes = int(input())
-    total = total + dimes * .1
-    print("Cash Total: $" + str (total) + "\n")
+    dimes = Money(int(input("How many dimes?\n")) * 0.10, 'USD')
+    print(dimes)
+    total = total + dimes
 
-    # Nickels
-    print("Nickels Count:")
-    nickels = int(input())
-    total = total + nickels * .05
-    print("Cash Total: $" + str (total) + "\n")
+    nickels = Money(int(input("How many nickels?\n")) * 0.05, 'USD')
+    print(nickels)
+    total = total + nickels
 
-    # Pennies
-    print("Pennies Count:")
-    pennies = int(input())
-    total = total + pennies * .01
-    print("Cash Total: $" + str (total) + "\n")
+    pennies = Money(int(input("How many pennies?\n")) * 0.01, 'USD')
+    print(pennies)
+    total = total + pennies
 
-    # Other
-    print("Large bills and checks total")
-    othermoney = float(input())
-    total = total + othermoney
-    print("Final Daily Total: $" + str (total) + "\n")
+    return total
 
-get_total()
+print("\nTotal: " + str(close_register()))
+
