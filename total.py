@@ -1,3 +1,7 @@
+# Community Cycles Register Closer
+# Author: Dennis Olsen
+#License: MIT
+
 from moneyed import Money
 
 def close_register():
@@ -73,4 +77,3 @@ print("\nChecks Count: " + str(checkstotal))
 daily_total = register_count + checkstotal
 
 print("\nDaily Register Total: " + str(daily_total))
-
