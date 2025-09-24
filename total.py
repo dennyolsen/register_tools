@@ -1,6 +1,6 @@
 # Community Cycles Register Closer
 # Author: Dennis Olsen
-#License: MIT
+# License: MIT
 
 from moneyed import Money
 
