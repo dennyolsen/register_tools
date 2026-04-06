@@ -76,4 +76,8 @@ print("\nChecks Count: " + str(checkstotal))
 
 daily_total = register_count + checkstotal
 
-print("\nDaily Register Total: " + str(daily_total))
+print("\nRegister Total: " + str(daily_total))
+
+print("\nRegister Cash Drop: " + str(daily_total - Money(200, 'USD')))
+
+print("\nClosing Count: " + str(Money(200, 'USD')))
